@@ -1,16 +1,69 @@
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,500,700);
-
-$colorPrimary: red;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import './theme';
 
 $mobileBreakPoint: 768px;
 
-.root {
-	background: $colorPrimary;
-	display: block;
+body {
+	font-family: 'Manrope';
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+ul, li, a {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, p {
+	margin: 0;
+	padding: 0;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 16px 24px;
+	gap: 10px;
+	background: linear-gradient(139.9deg, #D61544 2.48%, #F07E3D 100%);
+	box-shadow: 0px 6px 16px rgba(193, 36, 75, 0.2);
+	border-radius: 30px 0px;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color:$colorWhite;
+}
+
+.wrapper {
+	box-sizing: border-box;
+	width: 1440px;
+	max-width: 100%;
+	padding: 0 40px;
+}
+
+.section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-section {
+	background: no-repeat url('../imgs/bg.svg') center/cover;
+	display: flex;
+	flex-direction: column;
+	letter-spacing: 0.04em;
 }
 
 
 @media screen and (max-width: $mobileBreakPoint) {
 
 }
+
+@import "./components/header.scss";
+@import "./components/info.scss";

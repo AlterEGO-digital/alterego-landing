@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
+
 <body>
 	<div class="root">
-		<include src="components/modal.html">{
-			"arr": [1, 2, 3]
-		}</include>
+		<section class="header-section section">
+			<div class="wrapper">
+				<include src="components/header.html"></include>
+				<include src="components/info.html"></include>
+			</div>
+		</section>
 	</div>
-    <script src="./js/index.js" type="module"></script>
+
+	<!-- <include src="components/modal.html">{
+			"arr": [1, 2, 3]
+		}</include> -->
+	</div>
+	<script src="./js/index.js" type="module"></script>
 </body>
+
 </html>
