@@ -22,24 +22,6 @@ h1, h2, h3, h4, h5, p {
 	padding: 0;
 }
 
-.btn {
-	display: flex;
-	align-items: center;
-	box-sizing: border-box;
-	padding: 16px 24px;
-	gap: 10px;
-	background: linear-gradient(139.9deg, #D61544 2.48%, #F07E3D 100%);
-	box-shadow: 0px 6px 16px rgba(193, 36, 75, 0.2);
-	border-radius: 30px 0px;
-	font-weight: 500;
-	font-size: 13px;
-	line-height: 18px;
-	text-align: center;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color:$colorWhite;
-}
-
 .wrapper {
 	box-sizing: border-box;
 	width: 1440px;
@@ -60,6 +42,51 @@ h1, h2, h3, h4, h5, p {
 	letter-spacing: 0.04em;
 }
 
+.services-section {
+	background: $colorBglight;
+}
+
+.circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 8px 24px 0px #86536514;
+}
+
+.title-box {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 30px;
+	&__title {
+		font-weight: 800;
+		font-size: 30px;
+		line-height: 41px;
+		letter-spacing: 0.04em;
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 16px 24px;
+	gap: 10px;
+	background: $colorBgRed;
+	box-shadow: 0px 6px 16px #c1244b33;
+	border-radius: 30px 0px;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color:$colorWhite;
+}
+
 
 @media screen and (max-width: $mobileBreakPoint) {
 
@@ -67,3 +94,5 @@ h1, h2, h3, h4, h5, p {
 
 @import "./components/header.scss";
 @import "./components/info.scss";
+@import "./components/card.scss";
+@import "./components/services.scss";
