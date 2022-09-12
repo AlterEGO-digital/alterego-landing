@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, p {
 	background: $colorBg;
 }
 
+.slider-section {
+	background: $colorBglight;
+}
+
 .circle {
 	width: 70px;
 	height: 70px;
@@ -103,3 +107,4 @@ h1, h2, h3, h4, h5, p {
 @import "./components/projects.scss";
 @import "./components/date-card.scss";
 @import "./components/project-card.scss";
+@import "./components/slider-section.scss";
