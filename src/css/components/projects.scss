@@ -1,0 +1,28 @@
+.projects {
+	padding-bottom: 110px;
+	position: relative;
+
+	&__date {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 80px;
+		margin-bottom: 75px;
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: 30px;
+		line-height: 41px;
+		letter-spacing: 0.04em;
+		color: $colorWhite;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		position: absolute;
+		bottom: 0;
+		transform: translate(0%,50%);
+	}
+}
