@@ -54,6 +54,10 @@ h1, h2, h3, h4, h5, p {
 	background: $colorBglight;
 }
 
+.footer-section {
+	background: $colorBg;
+}
+
 .circle {
 	width: 70px;
 	height: 70px;
@@ -95,6 +99,20 @@ h1, h2, h3, h4, h5, p {
 	color:$colorWhite;
 }
 
+.input {
+	box-sizing: border-box;
+	border: none;
+	border-bottom: 1px solid #1f192633;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.04em;
+	color: #493F58;
+	width: 100%;
+	padding: 15px 0px 10px 20px;
+	outline: none;
+}
+
 
 @media screen and (max-width: $mobileBreakPoint) {
 
@@ -108,3 +126,4 @@ h1, h2, h3, h4, h5, p {
 @import "./components/date-card.scss";
 @import "./components/project-card.scss";
 @import "./components/slider-section.scss";
+@import "./components/footer.scss";
