@@ -48,6 +48,11 @@ h1, h2, h3, h4, h5, p {
 
 .projects-section {
 	background: $colorBg;
+	.wrapper {
+		padding: 0;
+		max-width: none;
+		width: 100%;
+	}
 }
 
 .slider-section {

@@ -1,6 +1,19 @@
 .projects {
-	padding-bottom: 110px;
 	position: relative;
+
+	.date-wrap-box {
+		box-sizing: border-box;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0 80px;
+	}
+
+	.card-wrap-box {
+		display: flex;
+		background: linear-gradient(180deg, rgba(30, 22, 39, 0) 0%, rgba(30, 22, 39, 0) 50%, rgba(251,251,255,1) 50%);
+		overflow: hidden;
+		padding-left: 40px;
+	}
 
 	&__date {
 		display: flex;
@@ -15,14 +28,12 @@
 		line-height: 41px;
 		letter-spacing: 0.04em;
 		color: $colorWhite;
+		margin-bottom: 40px;
 	}
 
 	&__cards {
-		display: flex;
-		justify-content: center;
-		gap: 40px;
-		position: absolute;
-		bottom: 0;
-		transform: translate(0%,50%);
+		overflow: hidden;
+		margin: 0 auto;
+		max-width: 1440px;
 	}
 }
