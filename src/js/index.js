@@ -37,5 +37,15 @@ owl.on('changed.owl.carousel', function (e) {
 	counter.innerHTML = `${e.item.index + 1}/${e.item.count}`
 })
 
+const header = document.getElementById("header");
+const sticky = header.offsetTop;
 
+const headerScroll = () => {
+	if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	} else {
+		header.classList.remove("sticky");
+	}
+}
 
+window.addEventListener('scroll', headerScroll)

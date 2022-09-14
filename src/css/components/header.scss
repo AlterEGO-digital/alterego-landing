@@ -1,10 +1,20 @@
 .header {
-	color: $colorWhite;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 30px 0;
-	margin-bottom: 170px;
+	padding: 30px 0px;
+	justify-content: center;
+	width: 100%;
+	transition: all 0.5s ease-out;
+
+	.header-wrap {
+		width: 100%;
+		color: $colorWhite;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1440px;
+		padding: 0 40px;
+		box-sizing: border-box;
+	}
 
 	.nav {
 		&__list {
@@ -36,4 +46,14 @@
 			cursor: pointer;
 		}
 	}
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	background: linear-gradient(63.15deg, rgba(30, 22, 39, 0.4) 12.38%, rgba(32,30, 56, 0.4) 87.48%);
+	padding: 0;
+	backdrop-filter: blur(20px);
+	z-index: 3;
+	transition: all 0.5s ease-in-out;
 }
