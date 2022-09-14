@@ -1,0 +1,18 @@
+<div class="slide-card">
+	<div class="slide-card__slide-img">
+		<img src="{{ img }}" alt="">
+	</div>
+	<div class="slide-card__right-side right-side">
+		<img class="right-side__logo" src="{{ logo }}" alt="logo">
+		<h2 class="right-side__title">{{ title }}</h2>
+		<div class="right-side__badges">
+			<each loop="badge in badges">
+				<div class="badges">
+					<img src="./imgs/check.svg" alt="check ico">
+					<p>{{ badge }}</p>
+				</div>
+			</each>
+		</div>
+		<a href="#" class="btn">Дізнатись більше</a>
+	</div>
+</div>
