@@ -26,6 +26,9 @@
 
 		&__item {
 			cursor: pointer;
+			a {
+				color: $colorWhite;
+			}
 		}
 	}
 

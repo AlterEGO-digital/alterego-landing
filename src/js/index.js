@@ -5,6 +5,7 @@ document.addEventListener('readystatechange', () => {
 	testFunction();
 });
 
+// projects card slider
 $(document).ready(function () {
 	$('.projects-cards').owlCarousel({
 		items: 5.5,
@@ -15,6 +16,7 @@ $(document).ready(function () {
 	});
 });
 
+// main slider
 $(document).ready(function () {
 	$('.case-cards').owlCarousel({
 		items: 1,
@@ -37,6 +39,7 @@ owl.on('changed.owl.carousel', function (e) {
 	counter.innerHTML = `${e.item.index + 1}/${e.item.count}`
 })
 
+// header scroll
 const header = document.getElementById("header");
 const sticky = header.offsetTop;
 
@@ -48,4 +51,18 @@ const headerScroll = () => {
 	}
 }
 
-window.addEventListener('scroll', headerScroll)
+window.addEventListener('scroll', headerScroll);
+
+// onClick scroll
+const scrollArrow = document.getElementById("scroll-arrow-info");
+const navList = document.getElementById("nav");
+
+const handleScroll = (scrollElem) => (e) => {
+	e.preventDefault()
+	const targetEl = scrollElem || e.target.className;
+	const scrollTo = document.getElementById(targetEl);
+	if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth' })
+}
+
+scrollArrow.addEventListener('click', handleScroll('services'))
+navList.addEventListener('click', handleScroll())
