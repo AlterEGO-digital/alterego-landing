@@ -35,8 +35,8 @@ $('#slide-next-arrow').click(function () {
 })
 
 owl.on('changed.owl.carousel', function (e) {
-	const counter = document.getElementById('slide-number')
-	counter.innerHTML = `${e.item.index + 1}/${e.item.count}`
+	const counter = document.getElementById('slide-number');
+	counter.innerHTML = `${e.item.index + 1}/${e.item.count}`;
 })
 
 // header scroll
@@ -58,11 +58,17 @@ const scrollArrow = document.getElementById("scroll-arrow-info");
 const navList = document.getElementById("nav");
 
 const handleScroll = (scrollElem) => (e) => {
-	e.preventDefault()
+	e.preventDefault();
 	const targetEl = scrollElem || e.target.className;
 	const scrollTo = document.getElementById(targetEl);
-	if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth' })
+	if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
 
-scrollArrow.addEventListener('click', handleScroll('services'))
-navList.addEventListener('click', handleScroll())
+scrollArrow.addEventListener('click', handleScroll('services'));
+navList.addEventListener('click', handleScroll());
+
+// scroll to Top
+$("#footer-scroll-up").click(function () {
+	$("html, body").animate({ scrollTop: 0 }, "slow");
+	return false;
+});

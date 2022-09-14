@@ -3,6 +3,7 @@
 	display: flex;
 	justify-content: center;
 	margin-bottom: 85px;
+	position: relative;
 
 	&__contacts {
 		padding-right: 230px;
@@ -140,5 +141,30 @@
 				max-width: 530px;
 			}
 		}
+	}
+}
+
+.scroll-up {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 15px;
+	gap: 20px;
+	background: rgba(255, 255, 255, 0.6);
+	border: 1px solid #FFFFFF;
+	backdrop-filter: blur(24px);
+	border-radius: 40px;
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+
+	&-arrow {
+		width: 18px;
+		color: linear-gradient(139.9deg, #D61544 2.48%, #F07E3D 100%);
+		transform: rotate(180deg);
 	}
 }
