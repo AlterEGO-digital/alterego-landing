@@ -37,9 +37,25 @@
 				<include src="components/footer.html"></include>
 			</div>
 		</footer>
-		<div class="question">
+		<button id="question" class="write-to-us question">
 			<img src="./imgs/chat-ico.svg" alt="ask question">
-		</div>
+		</button>
+		<include src="components/modal.html">
+			{
+			"id": "write-to-us",
+			"class": "write-to-us",
+			"title": "Напишіть нам",
+			"subtitle": "І ми зробимо безкоштовну оцінку вашого проекту"
+			}
+		</include>
+		<include src="components/modal.html">
+			{
+			"id": "discuss-case",
+			"class": "discuss-case",
+			"title": "Зацікавив кейс?",
+			"subtitle": "Заповніть форму і ми розповімо деталі проекту"
+			}
+		</include>
 	</div>
 	</div>
 	<script src="./js/index.js" type="module"></script>

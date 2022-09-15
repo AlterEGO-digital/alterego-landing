@@ -27,7 +27,13 @@
 	}
 
 	&__btn {
-		max-width: 290px;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 18px;
+		text-align: center;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: $colorWhite;
 		margin-bottom: 20px;
 	}
 
