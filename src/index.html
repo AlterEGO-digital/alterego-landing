@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="stylesheet" href="./libs/OwlCarousel/dist/assets/owl.carousel.min.css" />
+	<title>Alterego</title>
 </head>
+
 <body>
 	<div class="root">
-		<include src="components/modal.html">{
-			"arr": [1, 2, 3]
-		}</include>
+		<section class="header-section section">
+			<include src="components/header.html"></include>
+			<div class="wrapper">
+				<include src="components/info.html"></include>
+			</div>
+		</section>
+		<section id="services" class="services-section section">
+			<div class="wrapper">
+				<include src="components/services.html"></include>
+			</div>
+		</section>
+		<section id="about" class="projects-section section">
+			<div class="wrapper">
+				<include src="components/projects.html"></include>
+			</div>
+		</section>
+		<section id="case" class="slider-section section">
+			<div class="wrapper">
+				<include src="components/slider-section.html"></include>
+			</div>
+		</section>
+		<footer class="footer-section section">
+			<div class="wrapper">
+				<include src="components/footer.html"></include>
+			</div>
+		</footer>
+		<button id="question" class="write-to-us question">
+			<img src="./imgs/chat-ico.svg" alt="ask question">
+		</button>
+		<include src="components/modal.html">
+			{
+			"id": "write-to-us",
+			"class": "write-to-us",
+			"title": "Напишіть нам",
+			"subtitle": "І ми зробимо безкоштовну оцінку вашого проекту"
+			}
+		</include>
+		<include src="components/modal.html">
+			{
+			"id": "discuss-case",
+			"class": "discuss-case",
+			"title": "Зацікавив кейс?",
+			"subtitle": "Заповніть форму і ми розповімо деталі проекту"
+			}
+		</include>
 	</div>
-    <script src="./js/index.js" type="module"></script>
+	</div>
+	<script src="./js/index.js" type="module"></script>
+	<script src="./libs/jquery.min.js"></script>
+	<script src="./libs/OwlCarousel/dist/owl.carousel.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,60 @@
+.slider-box {
+	margin-top: 100px;
+	margin-bottom: 60px;
+
+	&__headline {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 56px;
+		letter-spacing: 0.04em;
+		color: $colorPrimary;
+	}
+
+	&__btn{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__counter {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 18px;
+		text-align: center;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #201E38;
+	}
+
+	&__arrow {
+		transform: rotate(-90deg);
+		cursor: pointer;
+	}
+
+	&__dots {
+		display: flex;
+		justify-content: center;
+		padding: 20px 0;
+		gap: 20px;
+
+		.owl-dot {
+			width: 14px;
+			height: 14px;
+			background: #D9D9D9;
+			border: none;
+			border-radius: 100%;
+		}
+	}
+
+	.case-carousel {
+		display: flex;
+	}
+}

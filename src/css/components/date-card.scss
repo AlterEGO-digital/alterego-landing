@@ -1,0 +1,22 @@
+.date-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__number {
+		font-weight: 700;
+		font-size: 128px;
+		line-height: 120px;
+		letter-spacing: 0.01em;
+		color: $colorWhite;
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 28px;
+		letter-spacing: 0.04em;
+		color: #F07E3D;
+	}
+}

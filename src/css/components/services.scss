@@ -1,0 +1,81 @@
+.services {
+	margin-bottom: 90px;
+
+	&__headline {
+		margin-top: 80px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 60px;
+		.headline {
+			&__title {
+				color: $colorPrimary;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.medium-cards {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&__box {
+			margin-bottom: 90px;
+			display: flex;
+			gap: 40px;
+		}
+
+		&__img {
+			background-color: #D6154426;
+		}
+	}
+
+	.large-cards {
+
+		&__concat-title-box {
+			display: flex;
+			justify-content: center;
+			gap: 30%;
+		}
+
+		.startup {
+			&__img {
+				background-color: #EF804326;
+			}
+		}
+
+		.business {
+			&__img {
+				background: $colorBgRed;
+			}
+		}
+
+		&__box {
+			display: flex;
+			gap: 30%;
+			margin-left: 14%;
+			margin-bottom: 60px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		.info {
+			&__text {
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 28px;
+				text-align: center;
+				letter-spacing: 0.04em;
+				color: $colorPrimary;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
