@@ -28,7 +28,6 @@ $(document).ready(function () {
 const owl = $('.case-cards');
 $('#slide-next-arrow').click(function () {
 	owl.trigger('next.owl.carousel');
-
 })
 
 owl.on('changed.owl.carousel', function (e) {

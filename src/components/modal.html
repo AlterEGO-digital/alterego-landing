@@ -1,12 +1,11 @@
-<div id="{{id}}" class="{{class}} modal-root close">
+<div id="{{ id }}" class="{{ class }} modal-root close">
 	<div class="overlay"></div>
 	<div class="modal">
 		<div class="modal__close-ico modal-close-ico">
 			<img src="./imgs/close.svg" alt="close modal">
 		</div>
-		<h2 class="modal__title">{{title}}</h2>
-		<p class="modal__subtitle">{{subtitle}}</p>
-		<include src="components/form.html">
-		</include>
+		<h2 class="modal__title">{{ title }}</h2>
+		<p class="modal__subtitle">{{ subtitle }}</p>
+		<include src="components/form.html"></include>
 	</div>
 </div>
