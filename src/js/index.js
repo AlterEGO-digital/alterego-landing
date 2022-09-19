@@ -1,6 +1,8 @@
+import 'owl.carousel/dist/assets/owl.carousel.css';
 import '../css/index.scss';
+
 import { footerForm, fildsSelectors, footerFields, scrollToServices } from './const'
-import { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener } from './helpers';
+const { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener } = require('./helpers')
 
 // projects card slider
 $(document).ready(function () {
@@ -28,7 +30,6 @@ $(document).ready(function () {
 const owl = $('.case-cards');
 $('#slide-next-arrow').click(function () {
 	owl.trigger('next.owl.carousel');
-
 })
 
 owl.on('changed.owl.carousel', function (e) {
