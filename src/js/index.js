@@ -1,6 +1,8 @@
+import 'owl.carousel/dist/assets/owl.carousel.css';
 import '../css/index.scss';
+
 import { footerForm, fildsSelectors, footerFields, scrollToServices } from './const'
-import { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener } from './helpers';
+const { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener } = require('./helpers')
 
 // projects card slider
 $(document).ready(function () {
