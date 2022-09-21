@@ -18,12 +18,11 @@
 		flex-direction: column;
 		line-height: 36px;
 		margin-bottom: 40px;
-	}
-
-	&__item {
-		font-weight: 300;
-		font-size: 20px;
-		color: $colorSecondary;
+		li {
+			font-weight: 300;
+			font-size: 20px;
+			color: $colorSecondary;
+		}
 	}
 
 	&__btn {
