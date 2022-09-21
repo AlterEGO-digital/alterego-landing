@@ -26,8 +26,13 @@
 
 		&__item {
 			cursor: pointer;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 19px;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
 			a {
-				color: $colorWhite;
+				color: #DCDCE6;
 			}
 		}
 	}
