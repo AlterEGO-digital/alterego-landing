@@ -1,9 +1,7 @@
 .header {
 	display: flex;
-	padding: 30px 0px;
 	justify-content: center;
 	width: calc(100vw + 100%);
-	transition: all 0.5s ease-out;
 
 	.header-wrap {
 		width: 100%;
@@ -81,5 +79,4 @@
 	padding: 0;
 	backdrop-filter: blur(20px);
 	z-index: 3;
-	transition: all 0.5s ease-in-out;
 }
