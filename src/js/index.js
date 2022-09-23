@@ -68,8 +68,8 @@ $("#footer-scroll-up").click(function () {
 const writeToUsModal = document.getElementById("write-to-us");
 const discussCase = document.getElementById("discuss-case");
 
-const slideBtns = document.querySelectorAll("button.discuss-case");
-const discussBtns = document.querySelectorAll('button.write-to-us')
+const slideBtns = document.querySelectorAll('button[data-btn="discuss-case"]');
+const discussBtns = document.querySelectorAll('button[data-btn="write-to-us"]')
 
 const handleClose = () => {
 	document.body.style.overflowY = 'auto'
@@ -91,7 +91,7 @@ const getTmpCloseElems = () => {
 }
 
 const handleOpen = (e) => {
-	const [selector] = e.currentTarget.classList;
+	const selector = e.currentTarget.dataset.btn;
 	const tmpCloseElems = getTmpCloseElems();
 	handleListener(tmpCloseElems, handleClose);
 	if (selector) {
