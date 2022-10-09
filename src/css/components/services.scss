@@ -1,5 +1,6 @@
 .services {
-	margin-bottom: 90px;
+	padding-bottom: 90px;
+	overflow: hidden;
 
 	&__headline {
 		margin-top: 80px;
@@ -48,11 +49,10 @@
 	}
 
 	.large-cards {
-
 		&__concat-title-box {
 			display: flex;
 			justify-content: center;
-			gap: 30%;
+			gap: 20%;
 		}
 
 		.startup {
@@ -70,8 +70,8 @@
 
 		&__box {
 			display: flex;
-			gap: 30%;
-			margin-left: 14%;
+			gap: 20%;
+			margin-left: 19%;
 			margin-bottom: 60px;
 		}
 	}

@@ -4,7 +4,7 @@
 	width: calc(100vw + 100%);
 
 	.header-wrap {
-		width: 100%;
+		width: 100vw;
 		color: $colorWhite;
 		display: flex;
 		align-items: center;
@@ -12,6 +12,12 @@
 		max-width: 1440px;
 		padding: 0 40px;
 		box-sizing: border-box;
+	}
+
+	&__logo {
+		img {
+			max-width: 200px;
+		}
 	}
 
 	.nav {
