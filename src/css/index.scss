@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, p {
 
 .header-section {
 	background: no-repeat url('../imgs/bg.svg') bottom/cover;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	letter-spacing: 0.04em;
