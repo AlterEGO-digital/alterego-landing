@@ -190,11 +190,11 @@ h1, h2, h3, h4, h5, p {
 	width: 18px;
 	height: 18px;
 	margin: 0;
-	border: 3px solid $colorGrayLight;
+	border: 2px solid $colorGrayLight;
 	position: relative;
 	appearance: none;
 	transition: transform .3s ease-in-out;
-	border-radius: 0.15rem;
+	border-radius: 2px;
 
 	&:checked {
 		background: url(../imgs/agree.svg) no-repeat center/contain;
