@@ -1,7 +1,7 @@
 .info {
 	color: $colorWhite;
 	margin-left: 60px;
-	margin-top: 170px;
+	margin-top: 200px;
 
 	&__main {
 		margin-bottom: 55px;
@@ -18,12 +18,11 @@
 		flex-direction: column;
 		line-height: 36px;
 		margin-bottom: 40px;
-	}
-
-	&__item {
-		font-weight: 300;
-		font-size: 20px;
-		color: $colorSecondary;
+		li {
+			font-weight: 300;
+			font-size: 20px;
+			color: $colorSecondary;
+		}
 	}
 
 	&__btn {
