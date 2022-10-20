@@ -33,11 +33,35 @@
 					letter-spacing: 0.04em;
 					color: $colorPrimary;
 				}
+				&__agree-conditions {
+					color: red;
+				}
 			}
 		}
 
 		&__inputs {
 			max-width: 530px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.form {
+		.form {
+			&__info {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			padding-left: 20px;
+
+			.info {
+				&__text {
+					max-width: 250px;
+				}
+			}
+		}
 		}
 	}
 }

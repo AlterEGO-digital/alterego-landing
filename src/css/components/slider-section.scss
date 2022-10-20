@@ -59,3 +59,44 @@
 		display: flex;
 	}
 }
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.slider-box {
+		.owl-item{
+			&:nth-child(1) {
+				.slide-card__slide-img {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					img {
+						width: 100vw !important;
+					}
+				}
+			}
+			&:nth-child(2) {
+				.slide-card__slide-img {
+					position: absolute;
+					bottom: 2.5%;
+					left: 0;
+					img {
+						width: 120vw !important;
+					}
+				}
+			}
+			&:nth-child(3) {
+				.slide-card__slide-img {
+					position: absolute;
+					bottom: 0;
+					left: -5vw;
+					img {
+						width: 125vw !important;
+					}
+				}
+			}
+		}
+
+		&__headline {
+			max-width: 350px;
+		}
+	}
+}

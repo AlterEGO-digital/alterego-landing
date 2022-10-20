@@ -1,8 +1,8 @@
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import '../css/index.scss';
 
-import { footerForm, fildsSelectors, footerFields, scrollToServices } from './const'
-const { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener } = require('./helpers')
+import { footerForm, fildsSelectors, footerFields, scrollToServices, burgerBtnClose, burgerBtnOpen } from './const'
+const { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener, disableScroll, enableScroll } = require('./helpers')
 
 // projects card slider
 $(document).ready(function () {
@@ -72,7 +72,7 @@ const slideBtns = document.querySelectorAll('button[data-btn="discuss-case"]');
 const discussBtns = document.querySelectorAll('button[data-btn="write-to-us"]')
 
 const handleClose = () => {
-	document.body.style.overflowY = 'auto'
+	enableScroll()
 	if (!writeToUsModal.classList.contains('close')) {
 		writeToUsModal.classList.add('close');
 	}
@@ -96,7 +96,7 @@ const handleOpen = (e) => {
 	handleListener(tmpCloseElems, handleClose);
 	if (selector) {
 		document.getElementById(selector).classList.remove('close');
-		document.body.style.overflowY = 'hidden'
+		disableScroll();
 	}
 	tmpCloseElems.forEach(closeEl => removeEventListener('click', closeEl))
 }
@@ -121,3 +121,33 @@ const sendModalAnswer = (e) => {
 writeBtn.addEventListener('click', sendModalAnswer);
 caseBtn.addEventListener('click', sendModalAnswer);
 footerBtn.addEventListener('click', sendModalAnswer);
+
+// mobile menu
+const menuBtn = document.getElementById(burgerBtnOpen);
+const menuBtnClose = document.getElementById(burgerBtnClose);
+const burgerMenu = document.getElementById("menu");
+
+
+const handleOpenMenu = (e) => {
+	disableScroll()
+	if (e.currentTarget.id === burgerBtnOpen) burgerMenu.classList.remove('close')
+}
+
+const handleCloseMenu = (e) => {
+	enableScroll()
+	if (e.currentTarget.id === burgerBtnClose) burgerMenu.classList.add('close')
+}
+
+const handleScrollMenu = (e) => {
+	enableScroll();
+	e.preventDefault();
+	burgerMenu.classList.add('close');
+	const targetEl = e.target.className;
+	const scrollTo = document.getElementById(targetEl);
+	if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
+
+const [_, burgerNavlist] = burgerMenu.getElementsByClassName("nav");
+burgerNavlist.addEventListener('click', handleScrollMenu);
+menuBtn.addEventListener('click', handleOpenMenu)
+menuBtnClose.addEventListener('click', handleCloseMenu)
