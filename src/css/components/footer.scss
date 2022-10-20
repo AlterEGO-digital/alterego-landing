@@ -82,7 +82,7 @@
 				.icons {
 					&__list {
 						display: flex;
-						gap: 30px;
+						justify-content: space-between;
 					}
 				}
 			}
@@ -122,6 +122,9 @@
 						color: $colorPrimary;
 					}
 
+					&__agree-conditions {
+						color: red;
+					}
 				}
 			}
 
@@ -155,5 +158,44 @@
 		width: 18px;
 		color: linear-gradient(139.9deg, #D61544 2.48%, #F07E3D 100%);
 		transform: rotate(180deg);
+	}
+}
+
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.footer {
+		flex-direction: column;
+		justify-content: center;
+		&__contacts {
+			padding-right: 0;
+			.contacts {
+				&__icons {
+					.icons {
+						&__list {
+							transform: translate(0,800);
+						}
+					}
+				}
+				&__info {
+					.info {
+						&__list {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+		}
+		.form {
+			&__title {
+				font-size: 26px;
+				line-height: 32px;
+			}
+			margin-bottom: 200px;
+		}
+	}
+	.scroll-up {
+		bottom: 100;
+		left: 50%;
+		transform: translate(-50%);
 	}
 }

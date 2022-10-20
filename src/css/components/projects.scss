@@ -70,3 +70,17 @@
 		}
 	}
 }
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.projects {
+		&__date {
+			flex-direction: column;
+		}
+
+		&__title {
+			font-size: 26px;
+			text-align: center;
+			line-height: 35px;
+		}
+	}
+}

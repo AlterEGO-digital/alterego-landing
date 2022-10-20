@@ -1,0 +1,70 @@
+.modal-root {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.close {
+	visibility: hidden;
+}
+
+.menu-modal {
+	z-index: 3;
+	overflow: auto;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #201E38;
+	box-shadow: 0px 8px 24px rgba(134, 83, 101, 0.08);
+
+	.nav {
+		&__list {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 40px;
+			margin-top: 95px;
+			padding: 30px 0;
+		}
+
+		&__item {
+			cursor: pointer;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 24px;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			a {
+				color: #DCDCE6;
+			}
+		}
+	}
+}
+
+.menu {
+	.contacts__icons {
+		.icons {
+			&__list {
+				display: flex;
+				flex-direction: row;
+				position: absolute;
+				gap: 30px;
+				bottom: 20;
+				left: 50%;
+				transform: translate(-50%,0);
+			}
+		}
+	}
+}

@@ -68,3 +68,13 @@
 	}
 
 }
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.modal {
+		gap: 0;
+		&__title {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+	}
+}
