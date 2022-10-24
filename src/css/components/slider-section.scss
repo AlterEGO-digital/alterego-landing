@@ -96,7 +96,10 @@
 		}
 
 		&__headline {
-			max-width: 350px;
+			max-width: calc(100vw - 10%);
+		}
+		&__title {
+			margin-left: 16px;
 		}
 	}
 }
