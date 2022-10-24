@@ -10,6 +10,7 @@ $(document).ready(function () {
 		items: 5.5,
 		autoWidth: true,
 		autoplay: true,
+		loop: true,
 		rewind: true,
 		margin: 40,
 	});
