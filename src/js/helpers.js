@@ -1,3 +1,5 @@
+import countryTelData from 'country-codes-list'
+
 export const getFieldsElements = (selectors, current, fildsArr) => {
 	selectors.forEach(
 		selector => fildsArr.push(current.querySelector(`#${selector}`))
@@ -40,3 +42,13 @@ export const disableScroll = () => {
 export const enableScroll = () => {
 	window.onscroll = function () { };
 }
+
+export const getCountry = () => {
+	return Intl.DateTimeFormat().resolvedOptions().locale
+}
+
+export const getCountryCodeNum = (inp) => {
+	const [country] = countryTelData.filter('officialLanguageCode', getCountry());
+	if (inp) return inp.value = `+${country.countryCallingCode}`
+	if (country) document.getElementById('number').value = `+${country.countryCallingCode}`
+};

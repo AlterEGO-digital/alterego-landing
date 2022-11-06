@@ -2,6 +2,7 @@
 @import './theme';
 
 $mobileBreakPoint: 768px;
+$desktopBreakPoint: 1280px;
 
 body {
 	font-family: 'Manrope';
@@ -22,6 +23,12 @@ h1, h2, h3, h4, h5, p {
 	padding: 0;
 }
 
+.root {
+	overflow-y: scroll;
+  	height: 100vh;
+	scroll-snap-type: y mandatory;
+}
+
 .wrapper {
 	box-sizing: border-box;
 	width: 1440px;
@@ -33,12 +40,16 @@ h1, h2, h3, h4, h5, p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	scroll-snap-align: start;
+	&:not(:nth-child(2), :nth-child(3)) {
+		height: 100vh;
+	}
 }
 
 .header-section {
 	background: no-repeat url('../imgs/bg.svg') bottom/cover;
-	height: 100vh;
 	display: flex;
+	justify-content: space-between;
 	flex-direction: column;
 	letter-spacing: 0.04em;
 }
@@ -171,17 +182,19 @@ h1, h2, h3, h4, h5, p {
 .input {
 	box-sizing: border-box;
 	border: none;
-	border-bottom: 1px solid #1f192633;
+	border-radius: 20px;
+	border: 1px solid #d615444d;
+	gap: 10px;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 28px;
 	letter-spacing: 0.04em;
 	color: #493F58;
 	width: 100%;
-	padding: 15px 0px 10px 20px;
+	padding: 5px 0px 5px 20px;
 	outline: none;
 	&::placeholder {
-  		color: #493F58;
+		color: #493F58;
 		font-weight: lighter;
 		opacity: 0.7;
 	}
@@ -228,6 +241,21 @@ h1, h2, h3, h4, h5, p {
 	}
 }
 
+.form-label {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 14px;
+	color: #797A8D;
+	padding-left: 20px;
+}
+
+.form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
 
 @media screen and (max-width: $mobileBreakPoint) {
 	.wrapper {
@@ -236,7 +264,6 @@ h1, h2, h3, h4, h5, p {
 
 	.header-section {
 		background-position: left;
-		justify-content: space-between
 	}
 
 	.slider-section {
@@ -276,10 +303,10 @@ h1, h2, h3, h4, h5, p {
 	resize: none;
 	font-size: inherit;
 	font-weight: 500;
-  	line-height: inherit;
+	line-height: inherit;
 	font-family: inherit;
 	&::placeholder {
-  		color: #493F58;
+		color: #493F58;
 		font-family: 'Manrope';
 		font-weight: 500;
 		opacity: 0.7;

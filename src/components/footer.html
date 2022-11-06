@@ -1,4 +1,4 @@
-<div class="footer">
+<div id="footer" class="footer">
 	<div class="footer__contacts contacts">
 		<h2 class="contacts__title">Зв'яжіться з нами</h2>
 		<p class="contacts__number">+351 912 572 503</p>
@@ -13,23 +13,23 @@
 		<div class="contacts__icons">
 			<ul class="icons__list">
 				<li>
-					<a href="#">
+					<a href="https://t.me/AlterEGOdigital" target="blank">
 						<img src="./imgs/tg-logo.svg" alt="telegram link">
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="./imgs/fb-logo.svg" alt="telegram link">
+					<a href="https://www.facebook.com/alterego.digital/" target="blank">
+						<img src="./imgs/fb-logo.svg" alt="facebook link">
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="./imgs/inst-logo.svg" alt="telegram link">
+					<a href="https://www.instagram.com/alterego.digital/" target="blank">
+						<img src="./imgs/inst-logo.svg" alt="instargam link">
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="./imgs/tw-logo.svg" alt="telegram link">
+					<a href="https://twitter.com/alteregostudio" target="blank">
+						<img src="./imgs/tw-logo.svg" alt="twitter link">
 					</a>
 				</li>
 			</ul>
@@ -38,14 +38,24 @@
 	<div id="footer-form" class="footer__form form">
 		<h2 class="form__title">Отримайте<br>безкоштовну консультацію</h2>
 		<div class="form__inputs">
-			<input id="name" class="input" type="text" placeholder="Ім’я">
-			<input id="number" class="input" type="text" placeholder="Номер телефону">
-			<input id="email" class="input" type="text" placeholder="E-mail">
+			<div class="form-row">
+				<span class="form-label">Ім’я</span>
+				<input id="name" class="input" type="text">
+			</div>
+			<div class="form-row">
+				<span class="form-label">Номер телефону</span>
+				<input id="number" class="input" type="text" placeholder="Номер телефону">
+			</div>
+			<div class="form-row">
+				<span class="form-label">Email</span>
+				<input id="email" class="input" type="text" placeholder="name@example.com">
+			</div>
 		</div>
 		<div class="form__info">
 			<input class="checkbox" type="checkbox" />
-			<p class="info__text">Реєструючись, я повністю погоджуюся <a class="info__agree-conditions" href="#">з умовами угоди<br>
-					користувача</a></p>
+			<p class="info__text">Я повністю погоджуюся
+				<a class="info__agree-conditions" href="#">з умовами користувача</a>
+			</p>
 		</div>
 		<button class="btn modal-submit">
 			Відправити
