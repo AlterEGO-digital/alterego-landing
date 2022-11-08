@@ -193,3 +193,22 @@ menuBtnClose.addEventListener('click', handleCloseMenu);
 // number code for country
 getCountryCodeNum();
 
+// lang switcher
+const langSwitcher = document.querySelector('.lang-switcher')
+const activeLang = document.querySelector('.sw-active')
+const secondLang = document.querySelector('.sw-secondary')
+
+const handleChangeLang = (e) => {
+	if (e.target.classList.contains('sw-secondary')) {
+		const tmpActiveInner = activeLang.innerHTML
+		activeLang.innerHTML = secondLang.innerHTML
+		secondLang.innerHTML = tmpActiveInner
+	}
+	if (langSwitcher.classList.contains('open')) {
+		langSwitcher.classList.remove('open')
+		return langSwitcher.classList.add('close-lang')
+	}
+	langSwitcher.classList.remove('close-lang')
+	langSwitcher.classList.add('open')
+}
+langSwitcher.addEventListener('click', handleChangeLang);
