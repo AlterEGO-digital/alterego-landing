@@ -40,6 +40,10 @@
 		}
 
 		&__inputs {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 			max-width: 530px;
 		}
 	}

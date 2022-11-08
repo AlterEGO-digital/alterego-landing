@@ -1,8 +1,27 @@
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import '../css/index.scss';
 
-import { footerForm, fildsSelectors, footerFields, scrollToServices, burgerBtnClose, burgerBtnOpen } from './const'
-const { getFieldsElements, cleanFiledsForPayload, cleanFiledsValue, getFildsValue, handleScroll, handleListener, disableScroll, enableScroll } = require('./helpers')
+import {
+	footerForm,
+	fieldsSelectors,
+	footerFields,
+	scrollToServices,
+	burgerBtnClose,
+	burgerBtnOpen,
+	scrollToFooter,
+} from './const'
+
+const {
+	getFieldsElements,
+	cleanFieldsForPayload,
+	cleanFieldsValue,
+	getFieldsValue,
+	handleScroll,
+	handleListener,
+	disableScroll,
+	enableScroll,
+	getCountryCodeNum
+} = require('./helpers')
 
 // projects card slider
 $(document).ready(function () {
@@ -10,7 +29,6 @@ $(document).ready(function () {
 		items: 5.5,
 		autoWidth: true,
 		autoplay: true,
-		loop: true,
 		rewind: true,
 		margin: 40,
 	});
@@ -25,6 +43,7 @@ $(document).ready(function () {
 		dotsContainer: '#dots',
 		dotsEach: true,
 		rewind: true,
+		margin: 30,
 	});
 });
 
@@ -55,15 +74,27 @@ window.addEventListener('scroll', headerScroll);
 // onClick scroll
 const scrollArrow = document.getElementById("scroll-arrow-info");
 const navList = document.getElementById("nav");
+const askBtn = document.querySelector('button[data-btn="ask-to-us"]')
 
 scrollArrow.addEventListener('click', handleScroll(scrollToServices));
+askBtn.addEventListener('click', handleScroll(scrollToFooter));
 navList.addEventListener('click', handleScroll());
 
 // scroll to Top
-$("#footer-scroll-up").click(function () {
-	$("html, body").animate({ scrollTop: 0 }, "slow");
-	return false;
-});
+const scrollUpObserver = new IntersectionObserver(([e]) => {
+	const scrollUpBtn = document.getElementById('footer-scroll-up');
+	if (!scrollUpBtn) return;
+	if (!e.isIntersecting) {
+		return scrollUpBtn.classList.remove('close');
+	}
+	return scrollUpBtn.classList.add('close');
+})
+
+scrollUpObserver.observe(document.querySelector('.header-section section'));
+
+const scrollUpArrow = document.getElementById("footer-scroll-up");
+const scrollTop = () => header.scrollIntoView({ behavior: 'smooth' })
+scrollUpArrow.addEventListener('click', scrollTop);
 
 // modal
 const writeToUsModal = document.getElementById("write-to-us");
@@ -97,6 +128,8 @@ const handleOpen = (e) => {
 	handleListener(tmpCloseElems, handleClose);
 	if (selector) {
 		document.getElementById(selector).classList.remove('close');
+		const numberInput = document.getElementById(selector).querySelector('#number')
+		getCountryCodeNum(numberInput);
 		disableScroll();
 	}
 	tmpCloseElems.forEach(closeEl => removeEventListener('click', closeEl))
@@ -106,16 +139,20 @@ handleListener([...slideBtns, ...discussBtns], handleOpen);
 
 // form payload
 const [writeBtn, caseBtn, footerBtn] = document.querySelectorAll('.modal-submit');
-const modalFileds = [];
+const modalFields = [];
 
 const sendModalAnswer = (e) => {
 	e.preventDefault();
 	const currentForm = e.currentTarget.parentElement;
-	cleanFiledsForPayload(modalFileds);
-	const selectors = currentForm.id === footerForm ? footerFields : fildsSelectors;
-	getFieldsElements(selectors, currentForm, modalFileds);
-	const payload = getFildsValue(modalFileds);
-	cleanFiledsValue(modalFileds);
+	cleanFieldsForPayload(modalFields);
+	const selectors = currentForm.id === footerForm ? footerFields : fieldsSelectors;
+	getFieldsElements(selectors, currentForm, modalFields);
+	const payload = getFieldsValue(modalFields);
+	let isValid = true;
+	Object.values(payload).forEach(valid => !valid && (isValid = false))
+	if(!isValid) return
+	cleanFieldsValue(modalFields);
+	getCountryCodeNum()
 	console.log(payload)
 }
 
@@ -150,5 +187,28 @@ const handleScrollMenu = (e) => {
 
 const [_, burgerNavlist] = burgerMenu.getElementsByClassName("nav");
 burgerNavlist.addEventListener('click', handleScrollMenu);
-menuBtn.addEventListener('click', handleOpenMenu)
-menuBtnClose.addEventListener('click', handleCloseMenu)
+menuBtn.addEventListener('click', handleOpenMenu);
+menuBtnClose.addEventListener('click', handleCloseMenu);
+
+// number code for country
+getCountryCodeNum();
+
+// lang switcher
+const langSwitcher = document.querySelector('.lang-switcher')
+const activeLang = document.querySelector('.sw-active')
+const secondLang = document.querySelector('.sw-secondary')
+
+const handleChangeLang = (e) => {
+	if (e.target.classList.contains('sw-secondary')) {
+		const tmpActiveInner = activeLang.innerHTML
+		activeLang.innerHTML = secondLang.innerHTML
+		secondLang.innerHTML = tmpActiveInner
+	}
+	if (langSwitcher.classList.contains('open')) {
+		langSwitcher.classList.remove('open')
+		return langSwitcher.classList.add('close-lang')
+	}
+	langSwitcher.classList.remove('close-lang')
+	langSwitcher.classList.add('open')
+}
+langSwitcher.addEventListener('click', handleChangeLang);

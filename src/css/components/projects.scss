@@ -13,9 +13,11 @@
 		display: flex;
 		background: linear-gradient(63.15deg, #1E1627 12.38%, #24223D 87.48%);
 		overflow: hidden;
-		padding-left: 40px;
 		position: relative;
 		padding-bottom: 10px;
+		.owl-stage{
+   			margin-left: 30px;
+		}
 	}
 
 	.card-wrap-box::before {
@@ -64,7 +66,6 @@
 	&__cards {
 		overflow: hidden;
 		margin: 0 auto;
-		max-width: 1440px;
 
 		.owl-stage {
 			padding-bottom: 20px;

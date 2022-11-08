@@ -11,6 +11,9 @@
 	font-size: 16px;
 	line-height: 28px;
 	color: $colorPrimary;
+	h1 {
+		max-width: 300px;
+	}
 
 	&__list {
 		display: flex;
