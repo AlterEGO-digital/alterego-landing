@@ -1,22 +1,25 @@
 import countryTelData from 'country-codes-list'
+import { regExp } from './const';
 
-export const getFieldsElements = (selectors, current, fildsArr) => {
+export const getFieldsElements = (selectors, current, fieldsArr) => {
 	selectors.forEach(
-		selector => fildsArr.push(current.querySelector(`#${selector}`))
+		selector => fieldsArr.push(current.querySelector(`#${selector}`))
 	);
 }
 
-export const cleanFiledsForPayload = (fieldsArr) => {
+export const cleanFieldsForPayload = (fieldsArr) => {
 	fieldsArr.splice(0, fieldsArr.length)
 }
 
-export const cleanFiledsValue = (fieldsArr) => {
+export const cleanFieldsValue = (fieldsArr) => {
 	fieldsArr.forEach(input => input.value = "");
 }
 
-export const getFildsValue = (fieldsArr) => {
+export const getFieldsValue = (fieldsArr) => {
 	const answer = {};
-	fieldsArr.forEach(fild => answer[fild.id] = fild.value)
+	fieldsArr.forEach(field => {
+		answer[field.id] = validate(field)
+	})
 	return answer;
 }
 
@@ -52,3 +55,44 @@ export const getCountryCodeNum = (inp) => {
 	if (inp) return inp.value = `+${country.countryCallingCode}`
 	if (country) document.getElementById('number').value = `+${country.countryCallingCode}`
 };
+
+const validate = (field) => {
+	const perentEl = field.closest('.form-row') || field.closest('.form__info')
+	const errorTost = perentEl.querySelector('.form-error')
+
+	if(field.id === 'number') {
+		if (field.value.length <= 10 || !regExp[field.id].test(field.value)) {
+			errorTost.classList.remove('hide')
+			field.focus()
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.value
+	}
+	if(field.id === 'mainText') {
+		if (field.value.length <= 5) {
+			errorTost.classList.remove('hide')
+			field.focus()
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.value
+	}
+	if (field.id === 'agreeCheckbox' || field.id === 'modalCheckbox') {
+		console.log(field.checked)
+		if (!field.checked) {
+			errorTost.classList.remove('hide')
+			field.focus()
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.cheked
+	}
+	if (!regExp[field.id].test(field.value)) {
+		errorTost.classList.remove('hide')
+		field.focus()
+		return false
+	}
+	errorTost.classList.add('hide')
+	return field.value
+}

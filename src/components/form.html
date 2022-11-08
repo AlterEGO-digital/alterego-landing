@@ -4,24 +4,31 @@
 			<div class="form-row">
 				<span class="form-label">Ім’я</span>
 				<input id="name" class="input" type="text">
+				<span class="form-error hide">обовʼязкове поле</span>
 			</div>
 			<div class="form-row">
 				<span class="form-label">Номер телефону</span>
 				<input id="number" class="input" type="text">
+				<span class="form-error hide">неправильный формат номеру телефону</span>
 			</div>
 			<div class="form-row">
 				<span class="form-label">Email</span>
 				<input id="email" class="input" type="text" placeholder="name@example.com">
+				<span class="form-error hide">неправильный формат email</span>
 			</div>
 			<div class="form-row">
 				<span class="form-label">Ваш запит</span>
 				<textarea name="main-text" placeholder="Опишіть питання з яким ви хочете до нас звернутись..."
-					class="input area-field" id="main-text" cols="0" rows="4"></textarea>
+				class="input area-field" id="mainText" cols="0" rows="4"></textarea>
+				<span class="form-error hide">обовʼязкове поле</span>
 			</div>
 		</div>
-		<div class="form__info">
-			<input id="modal-checkbox" class="checkbox" type="checkbox">
-			<p class="info__text">Я повністю погоджуюся <a class="info__agree-conditions" href="#">з умовами користувача</a></p>
+		<div class="form-row">
+			<div class="form__info">
+				<input id="modalCheckbox" class="checkbox" type="checkbox">
+				<p class="info__text">Я повністю погоджуюся <a class="info__agree-conditions" href="#">з умовами користувача</a></p><br/>
+			</div>
+			<span class="form-error hide">обовʼязкове поле</span>
 		</div>
 		<button class="modal-submit form__btn btn" type="submit">
 			Відправити

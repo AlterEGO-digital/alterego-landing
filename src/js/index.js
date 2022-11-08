@@ -3,7 +3,7 @@ import '../css/index.scss';
 
 import {
 	footerForm,
-	fildsSelectors,
+	fieldsSelectors,
 	footerFields,
 	scrollToServices,
 	burgerBtnClose,
@@ -13,9 +13,9 @@ import {
 
 const {
 	getFieldsElements,
-	cleanFiledsForPayload,
-	cleanFiledsValue,
-	getFildsValue,
+	cleanFieldsForPayload,
+	cleanFieldsValue,
+	getFieldsValue,
 	handleScroll,
 	handleListener,
 	disableScroll,
@@ -139,16 +139,20 @@ handleListener([...slideBtns, ...discussBtns], handleOpen);
 
 // form payload
 const [writeBtn, caseBtn, footerBtn] = document.querySelectorAll('.modal-submit');
-const modalFileds = [];
+const modalFields = [];
 
 const sendModalAnswer = (e) => {
 	e.preventDefault();
 	const currentForm = e.currentTarget.parentElement;
-	cleanFiledsForPayload(modalFileds);
-	const selectors = currentForm.id === footerForm ? footerFields : fildsSelectors;
-	getFieldsElements(selectors, currentForm, modalFileds);
-	const payload = getFildsValue(modalFileds);
-	cleanFiledsValue(modalFileds);
+	cleanFieldsForPayload(modalFields);
+	const selectors = currentForm.id === footerForm ? footerFields : fieldsSelectors;
+	getFieldsElements(selectors, currentForm, modalFields);
+	const payload = getFieldsValue(modalFields);
+	let isValid = true;
+	Object.values(payload).forEach(valid => !valid && (isValid = false))
+	if(!isValid) return
+	cleanFieldsValue(modalFields);
+	getCountryCodeNum()
 	console.log(payload)
 }
 
