@@ -79,14 +79,12 @@ const validate = (field) => {
 		return field.value
 	}
 	if (field.id === 'agreeCheckbox' || field.id === 'modalCheckbox') {
-		console.log(field.checked)
 		if (!field.checked) {
 			errorTost.classList.remove('hide')
-			field.focus()
 			return false
 		}
 		errorTost.classList.add('hide')
-		return field.cheked
+		return field.checked
 	}
 	if (!regExp[field.id].test(field.value)) {
 		errorTost.classList.remove('hide')
