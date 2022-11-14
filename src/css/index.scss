@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, p {
 
 .root {
 	overflow-y: scroll;
-  	height: 100vh;
+	height: 100vh;
 	scroll-snap-type: y mandatory;
 }
 
@@ -41,9 +41,6 @@ h1, h2, h3, h4, h5, p {
 	justify-content: center;
 	align-items: center;
 	scroll-snap-align: start;
-	&:not(:nth-child(2), :nth-child(3)) {
-		height: 100vh;
-	}
 }
 
 .header-section {
@@ -52,6 +49,8 @@ h1, h2, h3, h4, h5, p {
 	justify-content: space-between;
 	flex-direction: column;
 	letter-spacing: 0.04em;
+	height: 100vh;
+	min-height: 800px;
 }
 
 .services-section {
@@ -90,6 +89,7 @@ h1, h2, h3, h4, h5, p {
 
 .footer-section {
 	background: $colorBg;
+	height: 100vh;
 }
 
 .circle {
@@ -116,9 +116,9 @@ h1, h2, h3, h4, h5, p {
 	box-shadow: 0px 6px 16px rgba(193, 36, 75, 0.2);
 	border-radius: 30px;
 	position: fixed;
-	bottom: 150px;
-	right: 25px;
-	z-index: 1;
+	bottom: 20px;
+	right: 50px;
+	z-index: 3;
 	cursor: pointer;
 	border: none;
 }
@@ -275,11 +275,18 @@ h1, h2, h3, h4, h5, p {
 
 	.header-section {
 		background-position: left;
+		position: relative;
 	}
 
 	.slider-section {
 		.wrapper {
 			padding: 0;
+		}
+	}
+	.footer-section {
+		min-height: 1200px;
+		.footer {
+			margin-bottom: 0px;
 		}
 	}
 
@@ -290,6 +297,7 @@ h1, h2, h3, h4, h5, p {
 		margin-bottom: 22px;
 
 		&__title {
+			max-width: 280px;
 			font-weight: 700;
 			font-size: 24px;
 			line-height: 32px;

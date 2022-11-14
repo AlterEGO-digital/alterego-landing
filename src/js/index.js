@@ -153,6 +153,7 @@ const sendModalAnswer = (e) => {
 	if(!isValid) return
 	cleanFieldsValue(modalFields);
 	getCountryCodeNum()
+	handleClose()
 	console.log(payload)
 }
 
