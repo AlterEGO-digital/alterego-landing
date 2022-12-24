@@ -20,7 +20,7 @@ const {
 	handleListener,
 	disableScroll,
 	enableScroll,
-	getCountryCodeNum
+	getCountryCodeNum,
 } = require('./helpers')
 
 // projects card slider
@@ -29,6 +29,7 @@ $(document).ready(function () {
 		items: 5.5,
 		autoWidth: true,
 		autoplay: true,
+		loop: window.innerWidth < 1440 ? true : false,
 		rewind: true,
 		margin: 40,
 	});

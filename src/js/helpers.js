@@ -1,5 +1,5 @@
 import countryTelData from 'country-codes-list'
-import { regExp } from './const';
+import { regExp, REGEXP_FIELDS } from './const';
 
 export const getFieldsElements = (selectors, current, fieldsArr) => {
 	selectors.forEach(
@@ -52,16 +52,16 @@ export const getCountry = () => {
 
 export const getCountryCodeNum = (inp) => {
 	const [country] = countryTelData.filter('officialLanguageCode', getCountry());
-	if (inp) return inp.value = `+${country.countryCallingCode}`
+	if (inp && country) return inp.value = `+${country.countryCallingCode}`
 	if (country) document.getElementById('number').value = `+${country.countryCallingCode}`
 };
 
 const validate = (field) => {
-	const perentEl = field.closest('.form-row') || field.closest('.form__info')
-	const errorTost = perentEl.querySelector('.form-error')
+	const parentEl = field.closest('.form-row') || field.closest('.form__info')
+	const errorTost = parentEl.querySelector('.form-error')
 
-	if(field.id === 'number') {
-		if (field.value.length <= 10 || !regExp[field.id].test(field.value)) {
+	if (field.id === REGEXP_FIELDS.number) {
+		if (field.value.length <= 10 || field.value.length >= 15 || !regExp[field.id].test(field.value)) {
 			errorTost.classList.remove('hide')
 			field.focus()
 			return false
@@ -69,7 +69,7 @@ const validate = (field) => {
 		errorTost.classList.add('hide')
 		return field.value
 	}
-	if(field.id === 'mainText') {
+	if (field.id === REGEXP_FIELDS.mainText) {
 		if (field.value.length <= 5) {
 			errorTost.classList.remove('hide')
 			field.focus()
@@ -78,7 +78,7 @@ const validate = (field) => {
 		errorTost.classList.add('hide')
 		return field.value
 	}
-	if (field.id === 'agreeCheckbox' || field.id === 'modalCheckbox') {
+	if (field.id === REGEXP_FIELDS.agreeCheckbox || field.id === REGEXP_FIELDS.modalCheckbox) {
 		if (!field.checked) {
 			errorTost.classList.remove('hide')
 			return false
