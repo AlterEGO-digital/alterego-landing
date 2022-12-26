@@ -60,9 +60,9 @@ owl.on('changed.owl.carousel', function (e) {
 
 // header scroll
 const header = document.getElementById("header");
-const sticky = header.offsetTop;
 
 const headerScroll = () => {
+	const sticky = header.offsetTop;
 	if (window.pageYOffset > sticky) {
 		header.classList.add("sticky");
 	} else {
