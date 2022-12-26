@@ -11,6 +11,9 @@
 	font-size: 16px;
 	line-height: 28px;
 	color: $colorPrimary;
+	&:last-child {
+		max-width: 300px;
+	}
 
 	&__list {
 		display: flex;
@@ -24,5 +27,13 @@
 		line-height: 28px;
 		letter-spacing: 0.04em;
 		color: $colorPrimary;
+	}
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.card {
+		&:last-child {
+			max-width: none;
+		}
 	}
 }

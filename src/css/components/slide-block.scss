@@ -62,3 +62,37 @@
 .owl-carousel .owl-item img {
 	width: initial !important;
 }
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.slide-card {
+		max-width: 100%;
+		border-radius: 0px;
+		height: 908px;
+		overflow: hidden;
+		padding: 0px 16px;
+
+		&__right-side {
+			padding: 10px 0 10px 10px;
+
+			.right-side {
+
+				&__title {
+					max-width: 340px;
+					font-size: 26px;
+					line-height: 35px;
+				}
+
+				&__badges {
+					max-width: 340px;
+				}
+
+				&__btn {
+					margin: 0 auto;
+				}
+			}
+
+
+		}
+	}
+}
+

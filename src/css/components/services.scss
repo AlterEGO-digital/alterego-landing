@@ -1,5 +1,6 @@
 .services {
-	margin-bottom: 90px;
+	padding-bottom: 90px;
+	overflow: hidden;
 
 	&__headline {
 		margin-top: 80px;
@@ -10,9 +11,23 @@
 		text-align: center;
 		margin-bottom: 60px;
 		.headline {
+
 			&__title {
 				color: $colorPrimary;
 				margin-bottom: 20px;
+				font-weight: 700;
+				font-size: 40px;
+				line-height: 56px;
+			}
+
+			&__text {
+				font-family: 'Manrope';
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 28px;
+				text-align: center;
+				letter-spacing: 0.04em;
+				color: $colorPrimary;
 			}
 		}
 	}
@@ -34,11 +49,14 @@
 	}
 
 	.large-cards {
-
 		&__concat-title-box {
 			display: flex;
 			justify-content: center;
-			gap: 30%;
+			gap: 20%;
+			.card {
+				display: none;
+				margin-bottom: 40px;
+			}
 		}
 
 		.startup {
@@ -50,13 +68,14 @@
 		.business {
 			&__img {
 				background: $colorBgRed;
+				opacity: 0.8;
 			}
 		}
 
 		&__box {
 			display: flex;
-			gap: 30%;
-			margin-left: 14%;
+			gap: 20%;
+			margin-left: 19%;
 			margin-bottom: 60px;
 		}
 	}
@@ -75,6 +94,56 @@
 				letter-spacing: 0.04em;
 				color: $colorPrimary;
 				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+	.services {
+		max-width: $mobileBreakPoint;
+		&__headline {
+			align-items: flex-start;
+			.headline {
+
+				&__title {
+					font-size: 30px;
+					line-height: 40px;
+				}
+
+				&__text {
+					text-align: left;
+				}
+			}
+		}
+
+		.medium-cards {
+			&__box {
+				flex-direction: column;
+				margin-bottom: 40px;
+				gap: 20px;
+				width: 100%;
+			}
+		}
+
+		.large-cards {
+			&__concat-title-box {
+				flex-direction: column;
+				.card {
+					display: flex;
+				}
+			}
+
+			&__box {
+				display: flex;
+				gap: 20px;
+				margin-left: 0;
+				flex-direction: column;
+				.card {
+					&:first-child {
+						display: none;
+					}
+				}
 			}
 		}
 	}

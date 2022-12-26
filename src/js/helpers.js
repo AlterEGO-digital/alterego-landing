@@ -1,20 +1,25 @@
-export const getFieldsElements = (selectors, current, fildsArr) => {
+import countryTelData from 'country-codes-list'
+import { regExp, REGEXP_FIELDS } from './const';
+
+export const getFieldsElements = (selectors, current, fieldsArr) => {
 	selectors.forEach(
-		selector => fildsArr.push(current.querySelector(`#${selector}`))
+		selector => fieldsArr.push(current.querySelector(`#${selector}`))
 	);
 }
 
-export const cleanFiledsForPayload = (fieldsArr) => {
+export const cleanFieldsForPayload = (fieldsArr) => {
 	fieldsArr.splice(0, fieldsArr.length)
 }
 
-export const cleanFiledsValue = (fieldsArr) => {
+export const cleanFieldsValue = (fieldsArr) => {
 	fieldsArr.forEach(input => input.value = "");
 }
 
-export const getFildsValue = (fieldsArr) => {
+export const getFieldsValue = (fieldsArr) => {
 	const answer = {};
-	fieldsArr.forEach(fild => answer[fild.id] = fild.value)
+	fieldsArr.forEach(field => {
+		answer[field.id] = validate(field)
+	})
 	return answer;
 }
 
@@ -27,4 +32,65 @@ export const handleScroll = (scrollElem) => (e) => {
 
 export const handleListener = (elems, func) => {
 	elems.forEach(el => el.addEventListener('click', func));
+}
+
+export const disableScroll = () => {
+	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+	window.onscroll = function () {
+		window.scrollTo(scrollLeft, scrollTop);
+	};
+}
+
+export const enableScroll = () => {
+	window.onscroll = function () { };
+}
+
+export const getCountry = () => {
+	return Intl.DateTimeFormat().resolvedOptions().locale
+}
+
+export const getCountryCodeNum = (inp) => {
+	const [country] = countryTelData.filter('officialLanguageCode', getCountry());
+	if (inp && country) return inp.value = `+${country.countryCallingCode}`
+	if (country) document.getElementById('number').value = `+${country.countryCallingCode}`
+};
+
+const validate = (field) => {
+	const parentEl = field.closest('.form-row') || field.closest('.form__info')
+	const errorTost = parentEl.querySelector('.form-error')
+
+	if (field.id === REGEXP_FIELDS.number) {
+		if (field.value.length <= 10 || field.value.length >= 15 || !regExp[field.id].test(field.value)) {
+			errorTost.classList.remove('hide')
+			field.focus()
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.value
+	}
+	if (field.id === REGEXP_FIELDS.mainText) {
+		if (field.value.length <= 5) {
+			errorTost.classList.remove('hide')
+			field.focus()
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.value
+	}
+	if (field.id === REGEXP_FIELDS.agreeCheckbox || field.id === REGEXP_FIELDS.modalCheckbox) {
+		if (!field.checked) {
+			errorTost.classList.remove('hide')
+			return false
+		}
+		errorTost.classList.add('hide')
+		return field.checked
+	}
+	if (!regExp[field.id].test(field.value)) {
+		errorTost.classList.remove('hide')
+		field.focus()
+		return false
+	}
+	errorTost.classList.add('hide')
+	return field.value
 }

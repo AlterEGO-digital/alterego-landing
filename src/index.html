@@ -11,12 +11,23 @@
 <body>
 	<div class="root">
 		<section class="header-section section">
-			<include src="components/header.html"></include>
+			<include src="components/header.html">
+				{
+				"btnSelector": "burger-btn",
+				"btnImg": "imgs/burger-menu.svg"
+				}
+			</include>
 			<div class="wrapper">
 				<include src="components/info.html"></include>
 			</div>
-		</section>
-		<section id="services" class="services-section section">
+			<div class="wrapper">
+				<div class="info__emblem">
+					<img src="./imgs/emblem.svg" alt="emblem">
+					<p>Stand with Ukraine!</p>
+				</div>
+			</div>
+			</section>
+			<section id="services" class="services-section section">
 			<div class="wrapper">
 				<include src="components/services.html"></include>
 			</div>
@@ -36,9 +47,6 @@
 				<include src="components/footer.html"></include>
 			</div>
 		</footer>
-		<button id="question" class="write-to-us question">
-			<img src="./imgs/chat-ico.svg" alt="ask question">
-		</button>
 		<include src="components/modal.html">
 			{
 			"id": "write-to-us",
@@ -53,6 +61,12 @@
 			"class": "discuss-case",
 			"title": "Зацікавив кейс?",
 			"subtitle": "Заповніть форму і ми розповімо деталі проекту"
+			}
+		</include>
+		<include src="components/menu.html">
+			{
+			"id": "menu",
+			"class": "menu"
 			}
 		</include>
 	</div>

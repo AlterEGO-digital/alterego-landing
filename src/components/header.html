@@ -1,5 +1,8 @@
 <header id="header" class="header">
 	<div class="header-wrap">
+		<div class="header__burger-btn">
+			<img id="{{ btnSelector }}" src="{{ btnImg }}" alt="logo">
+		</div>
 		<div class="header__logo">
 			<img src="imgs/logo.svg" alt="logo">
 		</div>
@@ -12,8 +15,11 @@
 		</nav>
 		<div class="header__faq faq">
 			<div class="faq__list">
-				<button id="header-question" class="write-to-us faq__question">Задайте питання</button>
-				<button class="faq__lang">UA</button>
+				<button data-btn="ask-to-us" id="header-question" class="faq__question">Задайте питання</button>
+				<div class="lang-switcher">
+					<button class="faq__lang sw-active">UA</button>
+					<button class="faq__lang sw-secondary">EN</button>
+				</div>
 			</div>
 		</div>
 	</div>
