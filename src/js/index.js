@@ -60,9 +60,9 @@ owl.on('changed.owl.carousel', function (e) {
 
 // header scroll
 const header = document.getElementById("header");
+const sticky = header.offsetTop;
 
 const headerScroll = () => {
-	const sticky = header.offsetTop;
 	if (window.pageYOffset > sticky) {
 		header.classList.add("sticky");
 	} else {
@@ -91,10 +91,12 @@ const scrollUpObserver = new IntersectionObserver(([e]) => {
 	return scrollUpBtn.classList.add('close');
 })
 
-scrollUpObserver.observe(document.querySelector('.header-section section'));
+const headSection = document.querySelector('.header-section')
+scrollUpObserver.observe(headSection);
 
 const scrollUpArrow = document.getElementById("footer-scroll-up");
-const scrollTop = () => header.scrollIntoView({ behavior: 'smooth' })
+const scrollTop = () => headSection.scrollIntoView({ behavior: 'smooth' })
+
 scrollUpArrow.addEventListener('click', scrollTop);
 
 // modal
